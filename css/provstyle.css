@@ -8,6 +8,8 @@ body {
 }
 
 
+/* VIDEO CLIENT PAGE */
+
 .framework {
   display: grid;
   min-width: 750px;
@@ -50,7 +52,7 @@ body {
   color: #ffffff;
   border-radius: 5px;
   border: 2px solid #171717;
-  display: flex;
+  /* display: flex; Add into individual item if necessary*/
   justify-content: center;
   align-items: center;
   font-size: 14px;
@@ -65,23 +67,170 @@ body {
 .content-video {
   /* background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%); */
   background-color: #000;
+  justify-content: ;
 }
 
 .content-video video {
-  border-radius: 5px;
-  max-width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 100%;
+  display:  block;
 }
 
+.videoholster{
+ /* makes the UI stable during loading */
+ width: 100%;
+ min-height: 360px;
+ max-height: 720px;
+}
+
+.videoControls {
+  width:  100%;
+  height: 50px;
+  background-color: #333;
+  cursor:  pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-image: linear-gradient(180deg, #333 0%, #000 127%);
+}
+  .icon::before {
+    display: inline-block;
+    /* text-rendering: auto;
+    -webkit-font-smoothing: antialiased; */
+  }
+
+  .playerbtn {
+    cursor: pointer;
+    height: 30px;
+    font-size: 20px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .camera-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f03d";
+  color: #FFF;
+  } 
+
+  .camera-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f4e2";
+  color: red;
+  }
+
+  .mic-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f130";
+  color: #FFF;
+  } 
+
+  .mic-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f131";
+  color: red;
+  }
+
+  .output-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f028";
+  color: #FFF;
+  } 
+
+  .output-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f6a9";
+  color: red;
+  }
+
+  .fullscreen-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  } 
+
+  .fullscreen-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f066";
+  color: red;
+  }
+
+  .disconnect:before {
+  font: var(--fa-font-solid);
+  content: "\f057";
+  color: red;
+  } 
+
+  .disconnect.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f057";
+  color: red;
+  }
+
+/* Original Video Controls Classes Remove After Copying Relevant Parts 
+
+.player-controls {
+    width: 100%;
+    border-top: 1px solid;
+    position: fixed;
+    bottom: 0;
+    color: #afa;
+}
+
+.player-controls__button {
+    box-sizing: border-box;
+    width: 4em;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    line-height: 2.25em;
+    color: currentcolor;
+    background-color: transparent;
+}
+
+.player-controls__button:hover,
+.player-controls__button:focus,
+.player-controls__button.is-active {
+    color: #222;
+    background-color: #afa;
+}
+
+.player-controls__button:focus {
+    outline: none;
+}
+
+.player-controls__button.is-active:hover,
+.player-controls__button.is-active:focus {
+    color: currentcolor;
+    background-color: #222;
+} */
+
+/* Show Run Number Data Zone */ 
 .content-emtform {
   background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
 }
+
+
+/* Footer Zone */ 
 
 .footer {
   background-color: #6C52D9;
   background-image: linear-gradient(160deg, #6C52D9 0%, #9B8AE6 127%);
 }
 
-/* Index Page Holster */
+
+/* END VIDEO CLIENT PAGE */
+
+
+/* ---------------BEGIN INDEX PAGE--------------------------------------- */
 
 .holster {
   vertical-align: middle;
@@ -266,65 +415,3 @@ input[type="file"] {
 }
 
 
-
-
-/* REMOVE */
-
-.navbar {
-
-}
-
-.navbar a {
-  float: left;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
- 
-}
-
-.active {
- 
-}
-
-
-
-
-/* Rectangular Power Button */
-
-.button {
-  margin: .4em;
-  padding: 1em;
-  cursor: pointer;
-  background: #ececec;
-  text-decoration: none;
-  color: #666;
-}
-
-/* Trim Style of Button */
-
-.trim {
-  display: inline-block;
-  position: relative;
-  -webkit-tap-highlight-color: transparent;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent;
-}
-.trim:before {
-  content: '';
-  position: absolute;
-  border: white solid 4px;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  bottom: 4px;
-  opacity: 0;
-  transition-duration: 0.3s;
-  transition-property: opacity;
-}
-.trim:hover:before {
-  opacity: 1;
-}

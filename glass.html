@@ -2,9 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
   <head>
     <meta charset="utf-8">
-    <title>HTML CSS Register Form</title>
+    <title>Emergency Consult Portal - STS Provider</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/provstyle.css">
     <script type="text/javascript" src="https://pex-gcc.com/static/webrtc/js/pexrtc.js"></script>
     <script type="text/javascript" src="js/webui.js"></script>
@@ -25,19 +26,58 @@ window.onload = function()
 <div class="framework">
   <div class="item header">HEADER</div>
 
-  <div class="item content-video">
-    <video id="video" playsinline="playsinline" poster="img/loader2blue.gif" class="mediastream" muted autoplay="autoplay"/></video><br>
+<div class="item content-video">
+  <div class="videoholster">
+    <video id="video" playsinline="playsinline" poster="img/loader2blue.gif" class="mediastream" muted autoplay="autoplay"/></video>
         <div class="videoControls">
-            <a href="#" id="id_muteaudio" onclick="muteAudioStreams();" class="webrtcbutton btn-audio"><i class="fa fa-fw fa-microphone-slash"></i>Mute Mic</a>
-            <a rel="trim" class="button trim" onclick="window.location='index.html';">Exit</a>
+          <button class="icon playerbtn"><i id="output-tog" class="output-tog"></i></button>
+          <button class="icon playerbtn"><i id="camera-tog" class="camera-tog"></i></button>
+          <button class="icon playerbtn"><i id="mic-tog" class="mic-tog"></i></button>
+          <button class="icon playerbtn" onclick="window.location='index.html';"><i id="disconnect" class="disconnect"></i></button>
+          <button class="icon playerbtn"><i id="fullscreen-tog" class="fullscreen-tog"></i></button>
         </div>
+      </div>
   </div>
       
-  <div class="item content-emtform"></div>
+  <div class="item content-emtform"><ul><li>RUN Number XXXXXXXXX</li><li>Patient Name</li><li>Problem: Cupcake ipsum dolor sit amet gummi bears brownie. Sweet candy canes ice cream apple pie dessert I love. Cake jujubes cake chocolate carrot cake tart. Candy canes macaroon jelly-o sweet jelly-o caramels cupcake macaroon. Tiramisu marzipan carrot cake fruitcake biscuit caramels chocolate cake gingerbread pastry. I love sweet roll jelly brownie lemon drops tootsie roll. I love candy tart tiramisu biscuit chocolate bar jelly-o. Jujubes icing lollipop I love marshmallow soufflé shortbread wafer. Apple pie sweet powder caramels jujubes. Icing macaroon cupcake jelly pudding. Cotton candy candy canes cake oat cake cake. Cheesecake jujubes powder tart jelly beans liquorice pudding cookie chupa chups.
+
+Macaroon I love candy canes toffee brownie I love icing lemon drops toffee. Shortbread candy brownie apple pie I love. Cake danish pastry dessert jelly beans macaroon. I love jelly beans chocolate cake jujubes cake gummies I love brownie liquorice. Chupa chups bear claw sugar plum pudding macaroon dragée. Chocolate cake oat cake cake tiramisu biscuit. I love lollipop oat cake ice cream bear claw tart macaroon cotton candy. Cheesecake muffin dragée carrot cake macaroon bonbon bear claw chocolate. Lollipop gummi bears ice cream soufflé carrot cake candy canes gummies jujubes tiramisu. Jelly beans oat cake I love halvah sweet lemon drops I love carrot cake tart. Apple pie I love jujubes cookie sesame snaps tiramisu dragée I love cheesecake. Pastry sweet I love lemon drops cake. Tart tart icing jelly bonbon topping dragée.</li></ul></div>
   <div class="item footer">FOOTER</div>
 </div>
 
 </body>
+
+<script type="text/javascript">
+
+//Video Nav Elements
+
+const vid_tog = document.querySelector('.camera-tog');
+vid_tog.addEventListener('click', () => {
+    vid_tog.classList.toggle("is-active");
+});
+
+const mic_tog = document.querySelector('.mic-tog');
+mic_tog.addEventListener('click', () => {
+    mic_tog.classList.toggle("is-active");
+});
+
+const output_tog = document.querySelector('.output-tog');
+output_tog.addEventListener('click', () => {
+    output_tog.classList.toggle("is-active");
+});
+
+const disc_tog = document.querySelector('.disconnect');
+disc_tog.addEventListener('click', () => {
+    disc_tog.classList.toggle("is-active");
+});
+
+const fullscreen_tog = document.querySelector('.fullscreen-tog');
+fullscreen_tog.addEventListener('click', () => {
+    fullscreen_tog.classList.toggle("is-active");
+});
+
+</script>
+
 </html>
 
 

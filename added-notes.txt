@@ -1,0 +1,207 @@
+
+<div class="framework">
+  <div class="item header">header</div>
+  <div class="item content-video">Content-1</div>
+  <div class="item content-emtform">Content-2</div>
+  <div class="item footer">footer</div>
+</div>
+
+
+.framework {
+  display: grid;
+  width: 100%
+  height: 100%
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px 1fr 50px;
+  grid-gap: 1rem;
+  grid-template-areas:
+      "header header"
+      "content-video content-emtform"
+      "footer footer";
+}
+
+
+
+
+
+
+
+<div class="container">
+  <div class="item header">header</div>
+  <div class="item sidebar">sidebar</div>
+  <div class="item content-1">Content-1</div>
+  <div class="item content-2">Content-2</div>
+  <div class="item content-3">Content-3</div>
+  <div class="item footer">footer</div>
+</div>
+
+
+
+
+
+
+
+.container {
+  display: grid;
+  width: 750px;
+  height: 600px;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 80px 1fr 1fr 100px;
+  grid-gap: 1rem;
+  grid-template-areas:
+      "header header header"
+      "sidebar content-1 content-1"
+      "sidebar content-2 content-3"
+      "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content-1 {
+  grid-area: content-1;
+}
+
+.content-2 {
+  grid-area: content-2;
+}
+
+.content-3 {
+  grid-area: content-3;
+}
+
+.footer {
+  grid-area: footer;
+  grid-row: 4 / 5;
+  grid-column: 1 / 4;
+}
+
+
+
+/* OTHER STYLES */
+
+body {
+  background-color: #3b404e;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.item {
+  background-color: #1EAAFC;
+  background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  color: #ffffff;
+  border-radius: 4px;
+  border: 6px solid #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header {
+  background-color: #1EAAFC;
+  background-image: linear-gradient(160deg, #6C52D9 0%, #9B8AE6 127%);
+}
+
+.sidebar {
+  background-image: linear-gradient(203deg, #3EDFD7 0%, #29A49D 90%)
+}
+
+.content-1,
+.content-2,
+.content-3 {
+  background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
+}
+
+.footer {
+  background-color: #6C52D9;
+  background-image: linear-gradient(160deg, #6C52D9 0%, #9B8AE6 127%);
+}
+
+
+
+
+Font Awesome 6.1.1 Icons 
+
+Video On - <i class="fa-solid fa-video"></i> -- /f03d
+Video Off - <i class="fa-solid fa-video-slash"></i> -- /f4e2
+
+Mic On - <i class="fa-solid fa-microphone"></i> f130
+Mic Off - <i class="fa-solid fa-microphone-slash"></i> f131
+
+
+Audio Output On - <i class="fa-solid fa-volume-high"></i> f028
+Audio Output Off - <i class="fa-solid fa-volume-xmark"></i> fa69
+
+Fullscreen Button - <i class="fa-solid fa-expand"></i> f065
+Return to Regular - <i class="fa-solid fa-compress"></i> f066
+
+End Call - <i class="fa-solid fa-circle-xmark"></i> f057
+
+
+---------OTHER STUFF-----------
+
+Lock - <i class="fa-solid fa-lock"></i>
+Unlock - <i class="fa-solid fa-lock-open"></i>
+
+Settings Gear - <i class="fa-solid fa-sliders"></i>
+
+Translator - <i class="fa-solid fa-language"></i>
+
+
+Transfer - <i class="fa-solid fa-right-left"></i>
+
+SMS - <i class="fa-solid fa-comment-sms"></i>
+
+Square Plus - <i class="fa-solid fa-square-plus"></i>
+
+Regular Plus - <i class="fa-solid fa-plus"></i>
+
+Phone - <i class="fa-solid fa-phone"></i>
+
+
+Operator - <i class="fa-solid fa-headset"></i>
+
+Extra Menu - <i class="fa-solid fa-bars"></i>
+
+Medical Comment - <i class="fa-solid fa-comment-medical"></i>
+
+ID Card - <i class="fa-solid fa-id-card"></i>
+
+Envelope - <i class="fa-solid fa-envelope"></i>
+
+Calendar Day - <i class="fa-solid fa-calendar-day"></i>
+
+Clock - <i class="fa-solid fa-clock"></i>
+
+Ambulance - <i class="fa-solid fa-truck-medical"></i>
+
+Stethoscope - <i class="fa-solid fa-stethoscope"></i>
+
+Hospital - <i class="fa-solid fa-hospital"></i>
+
+Urgency - <i class="fa-solid fa-heart-circle-exclamation"></i>
+
+History - <i class="fa-solid fa-clock-rotate-left"></i>
+
+Pie Chart - <i class="fa-solid fa-chart-pie"></i>
+
+Alt Exit - <i class="fa-solid fa-right-from-bracket"></i>
+
+
+
+
+
+
+
+
+
