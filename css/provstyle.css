@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  background:linear-gradient(to right, #39adf3 0%, #4285b9 50%, #39adf3 99%);
+  background:linear-gradient(to right, #b0d8f0 0%, #39adf3 50%, #4285b9 99%);
   /* display: flex; 
   justify-content: center; */
 }
@@ -117,6 +117,10 @@ body {
     padding-right: 0px;
   }
 
+  .playerbtn button{
+    align-content: center;
+  }
+
   .camera-tog:before {
   font: var(--fa-font-solid);
   content: "\f03d";
@@ -126,7 +130,7 @@ body {
   .camera-tog.is-active:before {
   font: var(--fa-font-solid);
   content: "\f4e2";
-  color: red;
+  color: #ec6c70;
   }
 
   .mic-tog:before {
@@ -138,7 +142,7 @@ body {
   .mic-tog.is-active:before {
   font: var(--fa-font-solid);
   content: "\f131";
-  color: red;
+  color: #ec6c70;
   }
 
   .output-tog:before {
@@ -150,7 +154,7 @@ body {
   .output-tog.is-active:before {
   font: var(--fa-font-solid);
   content: "\f6a9";
-  color: red;
+  color: #ec6c70;
   }
 
   .fullscreen-tog:before {
@@ -161,21 +165,90 @@ body {
 
   .fullscreen-tog.is-active:before {
   font: var(--fa-font-solid);
-  content: "\f066";
-  color: red;
+  content: "\f065";
+  color: #FFF;
   }
 
   .disconnect:before {
   font: var(--fa-font-solid);
-  content: "\f057";
-  color: red;
+  content: "\f52b";
+  color: #f0d869;
   } 
 
   .disconnect.is-active:before {
   font: var(--fa-font-solid);
-  content: "\f057";
-  color: red;
+  content: "\f52b";
+  color: #f0d869;
   }
+
+/* Fullscreen Buttons  */
+
+/* html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
+}
+
+#page-wrapper {
+  width: 640px;
+  background: #FFFFFF;
+  padding: 1em;
+  margin: 1em auto;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8em;
+  background: #69c773;
+  border-bottom: 1px solid #498b50;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 0.5em 0.25rem 0;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+img {
+  max-width: 640px;
+}
+
+img:-webkit-full-screen {
+  max-width: none;
+}
+
+img:-moz-full-screen {
+  max-width: none;
+}
+
+img:-ms-fullscreen {
+  max-width: none;
+}
+
+img:full-screen {
+  max-width: none;
+}
+
+img:fullscreen {
+  max-width: none;
+}  
+*/
+
 
 
 /*  Data Display Zone */ 

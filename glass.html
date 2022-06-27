@@ -33,8 +33,8 @@ window.onload = function()
           <button class="icon playerbtn"><i id="output-tog" class="output-tog"></i></button>
           <button class="icon playerbtn"><i id="camera-tog" class="camera-tog"></i></button>
           <button class="icon playerbtn"><i id="mic-tog" class="mic-tog"></i></button>
+          <button class="icon playerbtn" id="fullscreen-tog"><i class="fullscreen-tog"></i></button>
           <button class="icon playerbtn" onclick="window.location='index.html';"><i id="disconnect" class="disconnect"></i></button>
-          <button class="icon playerbtn"><i id="fullscreen-tog" class="fullscreen-tog"></i></button>
         </div>
       </div>
   </div>
@@ -45,7 +45,43 @@ Macaroon I love candy canes toffee brownie I love icing lemon drops toffee. Shor
   <div class="item footer">FOOTER</div>
 </div>
 
-</body>
+
+
+<!-- <div id="page-wrapper">
+
+  <h1>Fullscreen API Demo</h1>
+
+  <section>
+    <h2>Full Screen Document</h2>
+    <button id="fs-doc-button">Go Fullscreen</button>
+    <button id="fs-exit-doc-button">Exit Fullscreen</button>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Full Screen Videos</h2>
+    <video id="video" width="640" height="365" controls>
+      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.webm" type="video/webm">
+      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.ogv" type="video/ogv">
+      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.mp4" type="video/mp4">
+      <p>
+        Your browser doesn't support HTML5 video.
+        <a href="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.mp4">Download</a> the video instead.
+      </p>
+    </video>
+    <button id="fs-vid-button">Go Fullscreen</button>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Full Screen Images</h2>
+    <img id="image" src="https://lh4.googleusercontent.com/-2dRSJbAmbqI/UTNLAOtCFII/AAAAAAAACqw/y3nrKoL06O8/w899-h674-no/100_0456.JPG" alt="Test Image">
+    <button id="fs-img-button">Go Fullscreen</button>
+  </section>
+</div> -->
+
 
 <script type="text/javascript">
 
@@ -76,17 +112,69 @@ fullscreen_tog.addEventListener('click', () => {
     fullscreen_tog.classList.toggle("is-active");
 });
 
+
+//FullScreen Button
+
+
+var requestFullscreen = function (ele) {
+  if (ele.requestFullscreen) {
+    ele.requestFullscreen();
+  } else if (ele.webkitRequestFullscreen) {
+    ele.webkitRequestFullscreen();
+  } else if (ele.mozRequestFullScreen) {
+    ele.mozRequestFullScreen();
+  } else if (ele.msRequestFullscreen) {
+    ele.msRequestFullscreen();
+  } else {
+    console.log('Fullscreen API is not supported.');
+  }
+};
+
+var exitFullscreen = function () {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  } else {
+    console.log('Fullscreen API is not supported.');
+  }
+};
+
+var fsVidButton = document.getElementById('fullscreen-tog');
+var video = document.getElementById('video');
+
+fsVidButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  requestFullscreen(video);
+});
+
+//var fsDocButton = document.getElementById('fs-doc-button');
+//var fsExitDocButton = document.getElementById('fs-exit-doc-button');
+
+//fsDocButton.addEventListener('click', function(e) {
+//  e.preventDefault();
+//  requestFullscreen(document.documentElement);
+//});
+
+//fsExitDocButton.addEventListener('click', function(e) {
+//  e.preventDefault();
+//  exitFullscreen();
+//});
+
+
+//var fsImgButton = document.getElementById('fs-img-button');
+//var image = document.getElementById('image');
+
+//fsImgButton.addEventListener('click', function(e) {
+//  e.preventDefault();
+//  requestFullscreen(image);
+//});
+
 </script>
-
-</html>
-
-
-
-
-
-
-
-
 
 
 

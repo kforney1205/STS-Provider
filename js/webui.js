@@ -8,8 +8,8 @@ var id_selfview;
 var id_muteaudio;
 var id_mutevideo;
 var cleanup;
-var class_mute_on = "participant_action fa fa-microphone-slash fa-fw red";
-var class_mute_off = "participant_action fa fa-microphone fa-fw green";
+var class_mute_on;
+var class_mute_off;
 
 
 var rtc = null;
@@ -112,14 +112,14 @@ function initialise(node, conference, userbw, name, userpin) {
 }
 
 //PowerButton for Player
-$('#btn-bg').click(function(){
-  $('#btn-bg').toggleClass('active');
-  if($('#btn-bg').hasClass("active")){
-    $('#power-text strong').text('ON').css('color', '#61fc8c');
-  }else{
-    $('#power-text strong').text('OFF').css('color', '#2a2a2a');
-  }
-});
+//$('#btn-bg').click(function(){
+//  $('#btn-bg').toggleClass('active');
+//  if($('#btn-bg').hasClass("active")){
+ //   $('#power-text strong').text('ON').css('color', '#61fc8c');
+ // }else{
+ //   $('#power-text strong').text('OFF').css('color', '#2a2a2a');
+//  }
+//});
 
 // function initialise(node, conference, userbw, name, userpin) {
 //    video = document.getElementById("video");
