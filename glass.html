@@ -17,7 +17,6 @@ window.onload = function()
     var params = Object.fromEntries(urlSearchParams.entries());
     var sessionalias = ("mp" + params.sessionalias);
     initialise("pex-gcc.com", sessionalias, "1264", "Provider", "2021");
-    //document.getElementById('id_muteaudio').click();
 }
 </script> 
   </head>
@@ -28,13 +27,13 @@ window.onload = function()
 
 <div class="item content-video">
   <div class="videoholster">
-    <video id="video" playsinline="playsinline" poster="img/BlackHelix.gif" class="mediastream" muted autoplay="autoplay"/></video>
-        <div class="videoControls">
-          <button class="icon playerbtn"><i id="output-tog" class="output-tog"></i></button>
-          <button class="icon playerbtn"><i id="camera-tog" class="camera-tog"></i></button>
-          <button class="icon playerbtn"><i id="mic-tog" class="mic-tog"></i></button>
-          <button class="icon playerbtn" id="fullscreen-tog"><i class="fullscreen-tog"></i></button>
-          <button class="icon playerbtn" onclick="window.location='index.html';"><i id="disconnect" class="disconnect"></i></button>
+    <video id="video" playsinline="playsinline" poster="img/BlackHelix.gif" class="mediastream" autoplay="autoplay"/></video>
+        <div class="videoControls" align="center">
+          <button class="icon playerbtn"><i id="output-tog" class="output-tog" title="mute/unmute your speakers"></i></button>
+          <button class="icon playerbtn"><i id="camera-tog" class="camera-tog" title="mute/unmute camera"></i></button>
+          <button class="icon playerbtn" onclick="micMute()"><i id="mic-tog" class="mic-tog" title="mute/unmute microphone"></i></button>
+          <button class="icon playerbtn" id="fullscreen-tog"><i class="fullscreen-tog" title="make video full screen"></i></button>
+          <button class="icon playerbtn" onclick="window.location='index.html';"><i id="disconnect" class="disconnect" title="end session"></i></button>
         </div>
       </div>
   </div>
@@ -47,67 +46,53 @@ Macaroon I love candy canes toffee brownie I love icing lemon drops toffee. Shor
 
 
 
-<!-- <div id="page-wrapper">
-
-  <h1>Fullscreen API Demo</h1>
-
-  <section>
-    <h2>Full Screen Document</h2>
-    <button id="fs-doc-button">Go Fullscreen</button>
-    <button id="fs-exit-doc-button">Exit Fullscreen</button>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Full Screen Videos</h2>
-    <video id="video" width="640" height="365" controls>
-      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.webm" type="video/webm">
-      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.ogv" type="video/ogv">
-      <source src="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.mp4" type="video/mp4">
-      <p>
-        Your browser doesn't support HTML5 video.
-        <a href="http://demos.mattwest.io/page-visibility-demo/videos/mikethefrog.mp4">Download</a> the video instead.
-      </p>
-    </video>
-    <button id="fs-vid-button">Go Fullscreen</button>
-  </section>
-
-  <hr>
-
-  <section>
-    <h2>Full Screen Images</h2>
-    <img id="image" src="https://lh4.googleusercontent.com/-2dRSJbAmbqI/UTNLAOtCFII/AAAAAAAACqw/y3nrKoL06O8/w899-h674-no/100_0456.JPG" alt="Test Image">
-    <button id="fs-img-button">Go Fullscreen</button>
-  </section>
-</div> -->
-
-
 <script type="text/javascript">
 
 //Video Nav Elements
 
-const vid_tog = document.querySelector('.camera-tog');
-vid_tog.addEventListener('click', () => {
+var vid_tog = document.querySelector('.camera-tog');
+var mic_tog = document.querySelector('.mic-tog');
+var output_tog = document.querySelector('.output-tog');
+var disc_tog = document.querySelector('.disconnect');
+var fullscreen_tog = document.querySelector('.fullscreen-tog');
+
+// Mute and Unmute Camera
+
+vid_tog.addEventListener('click', function(){
+    muteVideo = rtc.muteVideo();
     vid_tog.classList.toggle("is-active");
 });
 
-const mic_tog = document.querySelector('.mic-tog');
-mic_tog.addEventListener('click', () => {
-    mic_tog.classList.toggle("is-active");
+// Mute and Unmute Microphone
+
+mic_tog.addEventListener('click', function(){
+  muteAudio = rtc.muteAudio();
+  mic_tog.classList.toggle("is-active") 
 });
 
-const output_tog = document.querySelector('.output-tog');
-output_tog.addEventListener('click', () => {
-    output_tog.classList.toggle("is-active");
+
+// Mute and Unmute Listening Device
+var media_stage = document.getElementById("video");
+media_stage.muted = false
+output_tog.addEventListener('click', function(){
+  output_tog.classList.toggle("is-active");
+  if (media_stage.muted === true) {
+      media_stage.muted = false;
+    }
+    else if (media_stage.muted === false) {
+      media_stage.muted = true;
+    }
 });
 
-const disc_tog = document.querySelector('.disconnect');
+
+// Disconnect (works but no need to toggle)
+
 disc_tog.addEventListener('click', () => {
     disc_tog.classList.toggle("is-active");
 });
 
-const fullscreen_tog = document.querySelector('.fullscreen-tog');
+// Go Fullscreen (works but no need to toggle, toggle is automatic)
+
 fullscreen_tog.addEventListener('click', () => {
     fullscreen_tog.classList.toggle("is-active");
 });
@@ -151,28 +136,6 @@ fsVidButton.addEventListener('click', function(e) {
   e.preventDefault();
   requestFullscreen(video);
 });
-
-//var fsDocButton = document.getElementById('fs-doc-button');
-//var fsExitDocButton = document.getElementById('fs-exit-doc-button');
-
-//fsDocButton.addEventListener('click', function(e) {
-//  e.preventDefault();
-//  requestFullscreen(document.documentElement);
-//});
-
-//fsExitDocButton.addEventListener('click', function(e) {
-//  e.preventDefault();
-//  exitFullscreen();
-//});
-
-
-//var fsImgButton = document.getElementById('fs-img-button');
-//var image = document.getElementById('image');
-
-//fsImgButton.addEventListener('click', function(e) {
-//  e.preventDefault();
-//  requestFullscreen(image);
-//});
 
 </script>
 

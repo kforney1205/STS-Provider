@@ -15,8 +15,8 @@ var class_mute_off;
 var rtc = null;
 
 var trans = Array();
-trans['BUTTON_MUTEAUDIO'] = "Mute Mic";
-trans['BUTTON_UNMUTEAUDIO'] = "Unmute Mic";
+trans['BUTTON_MUTEAUDIO'] = null;
+trans['BUTTON_UNMUTEAUDIO'] = null;
 trans['BUTTON_MUTEVIDEO'] = "Mute Video";
 trans['BUTTON_UNMUTEVIDEO'] = "Unmute Video";
 trans['BUTTON_FULLSCREEN'] = "Fullscreen";
@@ -61,17 +61,20 @@ function connected(videoURL) {
 }
 
 
+
+/*
 function muteAudioStreams() {
-    if (!id_muteaudio.classList.contains("inactive")) {
-        muteAudio = rtc.muteAudio();
-        id_muteaudio.classList.toggle('selected');
+   if (!id_muteaudio.classList.contains("inactive")) {
+       muteAudio = rtc.muteAudio();
+      id_muteaudio.classList.toggle('selected');
         if (muteAudio) {
             id_muteaudio.textContent = trans['BUTTON_UNMUTEAUDIO'];
         } else {
             id_muteaudio.textContent = trans['BUTTON_MUTEAUDIO'];
         }
     }
-}
+} */
+
 
 
 
@@ -110,6 +113,18 @@ function initialise(node, conference, userbw, name, userpin) {
 
     rtc.makeCall(node, conference, name, bandwidth);
 }
+
+// function muteAudioStreams() {
+//    if (!id_muteaudio.classList.contains(".mic-tog")) {
+//       muteAudio = rtc.muteAudio();
+//        id_muteaudio.classList.toggle('.is-active');
+//       if (muteAudio) {
+//           this.id_muteaudio.className = ".mic-tog";
+//       } else {
+//           this.id_muteaudio.textContent = ".is-active";
+//       }
+//   }
+//}
 
 //PowerButton for Player
 //$('#btn-bg').click(function(){
