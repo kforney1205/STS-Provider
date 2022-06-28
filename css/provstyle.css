@@ -1,90 +1,17 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html {
+  height:  100%;
+}
+
 body {
-  background:linear-gradient(top right, #b0d8f0 0%, #39adf3 50%, #4285b9 99%);
-  /* display: flex; 
-  justify-content: center; */
+  background: linear-gradient(140deg, #b0d8f0 0%, #39adf3 50%, #4285b9 100%);
+  min-height: 100%;
 }
 
 /* VIDEO CLIENT PAGE */
-
-
-/* BEGIN SPECIAL STYLES FOR TABLET IN PORTRAIT MODE */
-@media only screen 
-  /*and (min-device-width: 768px) 
- 
-  and (-webkit-min-device-pixel-ratio: 2) */
-  and (orientation: portrait) 
-  and (max-device-width: 1024px)
-   {
-
-.framework {
-  display: grid;
-  min-width: 750px;
-  max-width: 1024px;
-  grid-template-rows: 60px 1fr 1fr 100px;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-  grid-template-areas:
-      "header"
-      "content-video"
-      "content-emtform"
-      "footer";
-  }
-
-  .header {
-  grid-area: header;
-  grid-row: 1;
-}
-
-.content-video {
-  grid-area: content-video;
-  grid-row: 2;
-}
-
-.content-emtform {
-  grid-area: content-emtform;
-  grid-row: 3;
-}
-
-.footer {
-  grid-area: footer;
-  grid-row: 4;
-}
-
-.header img {
- height: 50px;
-}
-
-.videoControls {
-  width:  100%;
-  height: 50px;
-  background-color: #333;
-  cursor:  pointer;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-image: linear-gradient(180deg, #333 0%, #000 127%);
-}
-
-.playerbtn {
-    cursor: pointer;
-    height: 30px;
-    font-size: 20px;
-    width: 40px;
-    background-color: transparent;
-    border: none;
-    align-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-}
-
-/* END TABLET IN PORTRAIT STYLES */
-
 
 .framework {
   display: grid;
@@ -120,7 +47,6 @@ body {
   grid-row: 3;
 }
 
-
 .item {
   background-color: #1EAAFC;
   /* background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%); */
@@ -136,7 +62,6 @@ body {
 .header {
  background-color: transparent;
  border: none;
- align-content: left;
 }
 
 .header img {
@@ -173,6 +98,7 @@ body {
   border-bottom-right-radius: 5px;
   background-image: linear-gradient(180deg, #333 0%, #000 127%);
 }
+  
   .icon::before {
     display: inline-block;
     /* text-rendering: auto;
@@ -286,7 +212,6 @@ body {
 
 .holster {
   vertical-align: middle;
-
 }
 
 
@@ -467,3 +392,77 @@ input[type="file"] {
 }
 
 
+/* BEGIN SPECIAL STYLES FOR TABLET IN PORTRAIT MODE */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: portrait)
+   {
+
+.framework {
+  display: grid;
+  min-width: 750px;
+  max-width: 1024px;
+  grid-template-rows: 60px 1fr 1fr 100px;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+  grid-template-areas:
+      "header"
+      "content-video"
+      "content-emtform"
+      "footer";
+  }
+
+  .header {
+  grid-area: header;
+  grid-row: 1;
+}
+
+.content-video {
+  grid-area: content-video;
+  grid-row: 2;
+}
+
+.content-emtform {
+  grid-area: content-emtform;
+  grid-row: 3;
+}
+
+.footer {
+  grid-area: footer;
+  grid-row: 4;
+}
+
+.header img {
+ height: 50px;
+}
+
+.videoControls {
+  width:  100%;
+  height: 50px;
+  background-color: #333;
+  cursor:  pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-image: linear-gradient(180deg, #333 0%, #000 127%);
+}
+
+.playerbtn {
+    cursor: pointer;
+    height: 30px;
+    font-size: 20px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+}
+
+/* END TABLET IN PORTRAIT STYLES */
