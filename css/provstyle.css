@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  background:linear-gradient(to right, #b0d8f0 0%, #39adf3 50%, #4285b9 99%);
+  background:linear-gradient(top right, #b0d8f0 0%, #39adf3 50%, #4285b9 99%);
   /* display: flex; 
   justify-content: center; */
 }
@@ -13,9 +13,10 @@ body {
 /* BEGIN SPECIAL STYLES FOR TABLET IN PORTRAIT MODE */
 @media only screen 
   /*and (min-device-width: 768px) 
-  and (max-device-width: 1024px)
+ 
   and (-webkit-min-device-pixel-ratio: 2) */
   and (orientation: portrait) 
+  and (max-device-width: 1024px)
    {
 
 .framework {
