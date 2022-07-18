@@ -15,8 +15,8 @@ window.onload = function()
     /* Params: conf node, conf name, bandwidth, display name, PIN */
     var urlSearchParams = new URLSearchParams(window.location.search);
     var params = Object.fromEntries(urlSearchParams.entries());
-    var sessionalias = ("mp" + params.sessionalias);
-    initialise("pex-gcc.com", sessionalias, "1264", "Provider", "2021");
+    var sessionalias = ("stsprov" + params.sessionalias);
+    initialise("pex-gcc.com", sessionalias, "1264", "Provider", "2022");
 }
 </script> 
   </head>
@@ -38,11 +38,28 @@ window.onload = function()
       </div>
   </div>
       
-  <div class="item content-emtform"><ul><li>RUN Number XXXXXXXXX</li><li>Patient Name</li><li>Problem: Cupcake ipsum dolor sit amet gummi bears brownie. Sweet candy canes ice cream apple pie dessert I love. Cake jujubes cake chocolate carrot cake tart. Candy canes macaroon jelly-o sweet jelly-o caramels cupcake macaroon. Tiramisu marzipan carrot cake fruitcake biscuit caramels chocolate cake gingerbread pastry. I love sweet roll jelly brownie lemon drops tootsie roll. I love candy tart tiramisu biscuit chocolate bar jelly-o. Jujubes icing lollipop I love marshmallow soufflé shortbread wafer. Apple pie sweet powder caramels jujubes. Icing macaroon cupcake jelly pudding. Cotton candy candy canes cake oat cake cake. Cheesecake jujubes powder tart jelly beans liquorice pudding cookie chupa chups.
-
-Macaroon I love candy canes toffee brownie I love icing lemon drops toffee. Shortbread candy brownie apple pie I love. Cake danish pastry dessert jelly beans macaroon. I love jelly beans chocolate cake jujubes cake gummies I love brownie liquorice. Chupa chups bear claw sugar plum pudding macaroon dragée. Chocolate cake oat cake cake tiramisu biscuit. I love lollipop oat cake ice cream bear claw tart macaroon cotton candy. Cheesecake muffin dragée carrot cake macaroon bonbon bear claw chocolate. Lollipop gummi bears ice cream soufflé carrot cake candy canes gummies jujubes tiramisu. Jelly beans oat cake I love halvah sweet lemon drops I love carrot cake tart. Apple pie I love jujubes cookie sesame snaps tiramisu dragée I love cheesecake. Pastry sweet I love lemon drops cake. Tart tart icing jelly bonbon topping dragée.</li></ul></div>
-  <div class="item footer" align="center"><img src="img/PSBrand-PexPowered-White.png"></div>
-</div>
+  <div class="item content-emtform">
+    <div class="form">
+      <div class="form-header" align="center"><h1>Session %sessionNumber%</h1></div>
+        <div class="form-body">
+          <div class=form-info-display>
+            <span class="form-info-display-label">First Name: </span> %FirstName% 
+          </div>
+           <div class=form-info-display>
+            <span class="form-info-display-label">Last Name: </span> %LastName% 
+          </div>
+          <div class=form-info-display>
+            <span class="form-info-display-label">Sex: </span> %Sex% 
+          </div>
+          <div class=form-info-display>
+            <span class="form-info-display-label">D.O.B: </span> %BirthDate% 
+          </div>
+          <div class=form-info-display-description>
+            <span class="form-info-display-label">Details: </span> %EMTDescription% 
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 

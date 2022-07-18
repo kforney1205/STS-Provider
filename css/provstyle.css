@@ -391,6 +391,27 @@ input[type="file"] {
   color:white;
 }
 
+.form-info-display{
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight:  900;
+  padding-bottom: 20px;
+  color:#333333;
+}
+
+.form-info-display-label{
+color: #0077c0;
+font-weight: 600; 
+}
+
+.form-info-display-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight:  700;
+  padding-bottom: 12px;
+  color:#333333;
+}
+
 
 /* BEGIN SPECIAL STYLES FOR TABLET IN PORTRAIT MODE */
 
